@@ -4,13 +4,13 @@ import { Tiltle, Contacts} from './App.styled';
 import Phonebook from 'components/Phonebook/Phonebook'
 import Forms from 'components/Form/Form';
 import Filter from './Filter/Filter';
-import basicContacts from '../../src/basicContacts';
+// import basicContacts from '../../src/basicContacts';
 
 
 class App extends Component {
 
  state = {
-  contacts: basicContacts,
+  contacts: [],
   filter: '',
   };   
 
@@ -36,6 +36,23 @@ class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
   };
+
+componentDidMount() {
+  console.log('start')
+  const contacts = localStorage.getItem('contacts');
+  const parsedContacts = JSON.parse(contacts);
+
+  if (parsedContacts) {
+    this.setState({contacts: parsedContacts});
+  }
+}
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('update')
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+    }
+  }
 
   render () {
     const  {filter, contacts} = this.state;
