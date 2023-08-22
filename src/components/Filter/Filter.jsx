@@ -8,7 +8,8 @@ const Filter = ({value, onChange}) => (
       <InputName type="text" 
                  value={value} 
                  onChange={onChange}  
-                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"/>
+                //  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                 />
     </FilterBox>  
 );
 

@@ -16,8 +16,7 @@ const Phonebook = ({contacts, onDeleteContact}) => (
               ))}
         </ContactList>
       </ContactBox> 
-    </Box>      
-
+    </Box>     
 ); 
 
 Phonebook.propTypes = {

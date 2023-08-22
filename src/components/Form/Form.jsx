@@ -3,14 +3,11 @@ import React, {Component} from 'react';
 import  {Form, TypeName, InputName, TypePhone, InputPhone, AddButton} from './Form.styled';
 import {nanoid} from 'nanoid'; 
 
-
 class Forms extends Component {
 
-    static propTypes = {
-      
+    static propTypes = {     
         contacts: PropTypes.arrayOf(PropTypes.string.isRequired),
-        onSubmit: PropTypes.func.isRequired,
-      
+        onSubmit: PropTypes.func.isRequired,     
     };
    
       state = {
