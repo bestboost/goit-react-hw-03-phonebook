@@ -86,7 +86,7 @@ class App extends Component {
                  onDeleteContact={this.deleteContact}/>
     </Box>
   );
-};
+ };
 };
 
 export default App;
