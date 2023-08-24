@@ -36,11 +36,10 @@ class App extends Component {
     }         
     
     const nextName = contact.name.toLowerCase()
-    const prevName = this.state.contacts
-          .map(c => c.name.toLowerCase())
-          .filter(con => con.includes(nextName));
+    const prevName = this.state.contacts.find(contact =>
+      contact.name.toLowerCase() === nextName)
  
-    if(prevName.includes(nextName)) {
+    if(prevName){
           alert(nextName + ' is already in contacts');
           return;
     }
